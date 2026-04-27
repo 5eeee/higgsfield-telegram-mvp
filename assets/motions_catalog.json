@@ -1,0 +1,849 @@
+[
+  {
+    "id": "ea035f68-b350-40f1-b7f4-7dff999fdd67",
+    "name": "360 Orbit",
+    "description": "The camera smoothly circles all the way around the subject, creating a dynamic, immersive view. Perfect for dramatic reveals, showcasing outfits, or adding visual energy.",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/e502574d-f1b5-4909-a3d7-bf25ff03c0fd.webp",
+    "start_end_frame": true
+  },
+  {
+    "id": "2bae49e6-ffe7-42a8-a73f-d44632c4acaa",
+    "name": "3D Rotation",
+    "description": "The subject or product spins smoothly in place, showing a full 360° view. Clean, centered, and perfect for showcasing design, fashion, or product details in a modern way.",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/41a455c8-6834-4887-8925-e19aeee15cb2.webp",
+    "start_end_frame": true
+  },
+  {
+    "id": "7f8971a6-9e96-45b6-a05a-8f5c99b1e13d",
+    "name": "Abstract",
+    "description": "Unusual shapes, shifting colors, and surreal motion that break away from reality. Evokes emotion, mystery, or chaos through non-traditional, artistic visuals.",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/9a751035-fbef-466c-97b3-c70734248c88.png",
+    "start_end_frame": false
+  },
+  {
+    "id": "dc8d7d9c-ae0c-45fc-b780-7d470b171b45",
+    "name": "Action Run",
+    "description": "Follows the subject in fast-paced motion, often with shaky cam and dynamic angles. Perfect for chase scenes, high-energy moments, or intense action shots.",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/6e1a98eb-74d5-40c0-8586-1806ee99e8be.webp",
+    "start_end_frame": true
+  },
+  {
+    "id": "65b0a5a3-953d-471c-86d5-967ab44d0dab",
+    "name": "Agent Reveal",
+    "description": "The subject jerks or shakes their head as their face and body glitch and morph into a sharp-suited agent figure. Fast, surreal, and powerful—perfect for sudden identity shifts or secret transformations.",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/d17809b1-c9a2-49e7-b979-e1015f9b9f83.webp",
+    "start_end_frame": true
+  },
+  {
+    "id": "d21ff628-0d91-40b2-8508-cd5a0ce375d4",
+    "name": "Angel Wings",
+    "description": "Wings spreading open behind person shoulders.",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/6edde309-eb83-4731-8ef7-cc8f24882999.webp",
+    "start_end_frame": false
+  },
+  {
+    "id": "c5881721-05b1-47d9-94d6-0203863114e1",
+    "name": "Arc Left",
+    "description": "The camera curves gracefully around the subject to the left, adding a sense of movement, focus, and cinematic style. Ideal for emotional build-up or visual flair.",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/3f78364e-2965-40fa-bbb0-974e27449a47.webp",
+    "start_end_frame": true
+  },
+  {
+    "id": "a85cb3f2-f2be-4ee2-b3b9-808fc6a81acc",
+    "name": "Arc Right",
+    "description": "The camera circles gently to the right around the subject, creating dynamic depth and flow. Perfect for adding elegance or cinematic intensity to a scene.",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/63bc8afa-28e0-4494-be9a-44d562e57138.webp",
+    "start_end_frame": true
+  },
+  {
+    "id": "ab0fa3d8-fcbe-4a6a-96bb-eae7a0e2c2cb",
+    "name": "Baseball Kick",
+    "description": "Captures the moment of a powerful baseball-style kick, with fast leg motion and dramatic impact. Perfect for action or stylized sports edits.",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/29e0b451-1c9b-4075-85c7-93474a8977cb.webp",
+    "start_end_frame": true
+  },
+  {
+    "id": "1b4c1b9a-898b-451c-bff8-7288382ccaf2",
+    "name": "Basketball Dunks",
+    "description": "Captures the high-energy motion of a person jumping and slamming a basketball into the hoop. Powerful, athletic, and dramatic—perfect for sports or hype edits.",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/08929e1c-2d0c-45f0-8653-00d132a2ad53.webp",
+    "start_end_frame": true
+  },
+  {
+    "id": "161d2898-f7ed-43f5-8daa-1175bcc69ba9",
+    "name": "Black Tears",
+    "description": "Thick, dark liquid streams from the subject’s eyes, creating a haunting, emotional, or supernatural effect. Perfect for horror, sorrowful moments, or eerie visual storytelling.",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/bd0bf1cf-0ba6-411a-83f1-3a1ed7057d10.webp",
+    "start_end_frame": true
+  },
+  {
+    "id": "4a79cff8-ef78-42ca-aed9-3fb9acaed4ad",
+    "name": "Bloom Mouth",
+    "description": "Person open mouth, petals or flower instead of tongue.",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/93f469b3-9aad-4610-8e7e-62d11eb4836b.webp",
+    "start_end_frame": false
+  },
+  {
+    "id": "4ac80533-015b-49c1-a2eb-891603823883",
+    "name": "Boxing",
+    "description": "Follows the quick jabs, hooks, and head movement of a boxer. Intense, up-close, and rhythmic—ideal for training montages or fight scenes.",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/4921b0b7-b524-4365-955a-39949123aaaa.webp",
+    "start_end_frame": true
+  },
+  {
+    "id": "a652ae99-c21b-4bdf-965c-e4a6d07fb262",
+    "name": "Buckle Up",
+    "description": "Low angle shot from beneath, as if filmed through a transparent glass floor, revealing the person’s figure and soles, creating a dynamic, voyeuristic perspective.",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/c8051976-348b-47cd-a2ef-9018e48466c5.webp",
+    "start_end_frame": true
+  },
+  {
+    "id": "cb8cfb5a-245d-4d96-92d7-7e0791967d75",
+    "name": "Building Explosion",
+    "description": "A building erupts in a massive blast, sending debris flying. Creates a powerful moment perfect for action scenes",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/51d42294-6d2f-4e0c-8448-c3b8d4114292.webp",
+    "start_end_frame": true
+  },
+  {
+    "id": "22d7c60a-b76f-4082-9928-d2a42357759a",
+    "name": "Bullet Time",
+    "description": "Freezes or slows down the action while the camera moves around the subject. Creates a dramatic, cinematic effect often seen in action or sci-fi scenes.",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/897e662e-7d15-4ba2-8f2c-dc4c772e347e.webp",
+    "start_end_frame": true
+  },
+  {
+    "id": "b98810ad-e51d-4680-a800-cd6fc8037bc4",
+    "name": "Car Chasing",
+    "description": "Follows fast-moving cars with dynamic camera angles to create thrilling, high-speed chase scenes. Ideal for action-packed sequences and cinematic intensity.",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/c37c6823-755c-479a-b8c2-de18523820da.webp",
+    "start_end_frame": true
+  },
+  {
+    "id": "0235b1a9-428a-4df5-aa5a-93b6dba41834",
+    "name": "Car Explosion",
+    "description": "A car bursts into flames and debris, creating a powerful, high-impact shot full of action and intensity",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/5c68e49b-8ae4-4cfb-986f-efe1edccb956.webp",
+    "start_end_frame": true
+  },
+  {
+    "id": "b3fd6f79-dd5e-48f7-b5b4-5c2f1655822c",
+    "name": "Car Grip",
+    "description": "Attaches the camera to a car, capturing dynamic driving shots with smooth motion. Perfect for action scenes or showing movement from the vehicle’s perspective.",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/f709826c-349c-4bda-bd7c-d3921d20600a.webp",
+    "start_end_frame": true
+  },
+  {
+    "id": "0e339850-d8f1-4c9d-be3a-97fc2cdb628e",
+    "name": "Catwalk",
+    "description": "Tracks a confident runway walk with smooth camera motion and fashion-forward energy. Sleek and stylish, like a high-fashion show moment.",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/d7df6057-5141-4503-8f77-d784c8c90164.webp",
+    "start_end_frame": true
+  },
+  {
+    "id": "fd6272d6-7b7c-4c4e-9afd-c5c98aaa1b5c",
+    "name": "Clone Explosion",
+    "description": "The subject instantly splits into multiple identical versions that burst outward in all directions. A bold, surreal effect perfect for showcasing speed, chaos, or supernatural duplication.",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/88a6e085-1c5f-4e40-b780-53db2af4235a.webp",
+    "start_end_frame": true
+  },
+  {
+    "id": "b26dcbe5-e784-4893-b8a3-2bd4f848e90a",
+    "name": "Crane Down",
+    "description": "Gently lowers the camera from above to the subject, creating a dramatic or revealing entrance. Perfect for introductions, transitions, or emotional emphasis.",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/9b1cfd4e-695e-4e6c-8f4a-0400d9d9eecd.webp",
+    "start_end_frame": true
+  },
+  {
+    "id": "0d736605-3a09-4a39-bcfe-b556fba7dd22",
+    "name": "Crane Over The Head",
+    "description": "The camera rises smoothly above the subject using a crane, revealing the surroundings or adding drama. Perfect for epic moments or scene transitions.",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/06182ae1-60af-4c32-8302-252afd9f7971.webp",
+    "start_end_frame": true
+  },
+  {
+    "id": "68af9add-43ea-4261-a706-16b640fdcff9",
+    "name": "Crane Up",
+    "description": "Lifts the camera smoothly upward using a crane, revealing the scene below or creating an epic rising shot. Great for transitions, reveals, or emotional build-up.",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/4e55f67b-7438-4831-b272-d24b917082e9.webp",
+    "start_end_frame": true
+  },
+  {
+    "id": "3ec247ed-063d-476d-8266-48829c2eced6",
+    "name": "Crash Zoom In",
+    "description": "Quickly zooms into the subject to create a dramatic, intense effect. Perfect for highlighting reactions or adding sudden focus in your video.",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/68739b61-d416-4ef4-b756-9ce44ba17bd6.webp",
+    "start_end_frame": true
+  },
+  {
+    "id": "3f7a86be-c78f-4c5d-8dbf-7395a3fbeea1",
+    "name": "Crash Zoom Out",
+    "description": "Rapidly zooms out from the subject to reveal the full scene or create a sense of surprise, urgency, or comic effect. Great for dramatic reveals.",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/ca24be58-81b4-4029-9ee8-7388286554b3.webp",
+    "start_end_frame": true
+  },
+  {
+    "id": "e3112849-0c04-4af2-be93-ccbb0f8f4cd5",
+    "name": "Datamosh",
+    "description": "A glitchy visual effect where pixels bleed, smear, and blend between frames, creating distorted transitions. Chaotic, trippy, and perfect for edgy, experimental, or digital glitch aesthetics.",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/ffbae751-2843-44ec-976b-0fc3920f5c34.webp",
+    "start_end_frame": true
+  },
+  {
+    "id": "81d6b1c4-dd8a-4130-9c01-fe85bf80babc",
+    "name": "Diamond",
+    "description": "The subject’s body transforms into a sparkling, faceted diamond—hard, reflective, and radiant. A stunning visual effect perfect for showing strength, elegance, or magical metamorphosis.",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/8d73e688-db7d-40a2-8816-56cacfada6e9.webp",
+    "start_end_frame": true
+  },
+  {
+    "id": "29168a2c-04db-4ad1-8e19-f2a24371d413",
+    "name": "Dirty Lens",
+    "description": "Simulates a camera lens with smudges, dust, or water drops for a raw, gritty look. Great for adding realism, mood, or a behind-the-scenes feel.",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/9a51bdce-eec3-4f7f-b3b3-8666ceabc1fc.webp",
+    "start_end_frame": true
+  },
+  {
+    "id": "97ffe32a-ab9a-4067-9cf9-9adc30c2656f",
+    "name": "Disintegration",
+    "description": "A visual effect where the subject breaks apart into particles or dust, creating a surreal, emotional, or epic moment",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/634ede39-bc1f-4635-b4bc-eee2d87a4735.webp",
+    "start_end_frame": true
+  },
+  {
+    "id": "81ca2cd2-05db-4222-9ba0-a32e5185adfb",
+    "name": "Dolly In",
+    "description": "Moves the camera smoothly toward the subject, drawing viewers closer and building focus or emotion. Ideal for intense or intimate moments.",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/5aa740e6-fa50-48fa-a82f-144921d536cd.webp",
+    "start_end_frame": true
+  },
+  {
+    "id": "71f0f8bc-0e5d-4d32-b34f-bd74a5e3cba8",
+    "name": "Dolly Left",
+    "description": "Moves the camera smoothly to the left, following or revealing the scene. Perfect for tracking shots, transitions, or adding visual interest.",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/e4ae265e-c344-441a-9012-d7e85726eeed.webp",
+    "start_end_frame": true
+  },
+  {
+    "id": "12ac8798-5370-4801-91a6-f1acb425fc4a",
+    "name": "Dolly Out",
+    "description": "Pulls the camera smoothly away from the subject, revealing more of the scene. Great for emotional distance, dramatic exits, or cinematic reveals.",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/94d0dc13-829e-4d4b-82c4-7068ab56b1b6.webp",
+    "start_end_frame": true
+  },
+  {
+    "id": "15ddc007-4723-42c1-8446-2af69af4879f",
+    "name": "Dolly Right",
+    "description": "Moves the camera smoothly to the right alongside the subject or scene. Great for tracking motion, revealing space, or adding cinematic flow.",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/1f0426ad-80ee-41f2-975d-462907b6f2d2.webp",
+    "start_end_frame": true
+  },
+  {
+    "id": "f0ca4e62-f65d-4a6d-83c1-ecbaa4d492ba",
+    "name": "Dolly Zoom In",
+    "description": "Moves the camera forward while zooming out, warping perspective and creating a dramatic, unsettling effect. Great for shock, realization, or tension.",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/4fe956fc-cf42-4017-b99e-ea3dde6350b5.webp",
+    "start_end_frame": true
+  },
+  {
+    "id": "2df82f5f-064a-4a7e-8b59-24ac446cb1df",
+    "name": "Dolly Zoom Out",
+    "description": "Moves the camera backward while zooming in, distorting perspective to heighten emotion or suspense. Perfect for dramatic reveals or intense moments.",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/95f288f7-da58-4e56-988f-e636ca5700c5.webp",
+    "start_end_frame": true
+  },
+  {
+    "id": "bd133fba-ed35-433b-9cb2-87b1f5bb1139",
+    "name": "Double Dolly",
+    "description": "Both the camera and subject move together on dollies, keeping the subject perfectly still in frame while the background shifts. Creates a surreal, floating effect often used in music videos and dreamlike scenes.",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/4f87868d-c5c8-4676-9b05-d5492143d922.webp",
+    "start_end_frame": true
+  },
+  {
+    "id": "381fcf9a-ca91-4eac-a3c4-43d4302d6404",
+    "name": "Downhill POV",
+    "description": "Simulates a fast, first-person ride down a slope with tight turns and bumps. Feels immersive, thrilling, and adrenaline-packed.",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/5e319691-e434-4594-965a-e62d4429314c.webp",
+    "start_end_frame": true
+  },
+  {
+    "id": "1d21b411-b706-4233-ad83-7599290ac51f",
+    "name": "Duplicate",
+    "description": "The subject splits into multiple identical copies that appear side by side or in sequence. Creates a surreal, sci-fi, or fast-motion effect—great for showing speed, confusion, or supernatural power.",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/6f726ca2-7dea-4048-8158-dd3eeeb87c23.webp",
+    "start_end_frame": true
+  },
+  {
+    "id": "915d6b95-6b9c-4a09-a0df-7ecd69c9bf64",
+    "name": "Dutch Angle",
+    "description": "Tilts the camera to create a slanted horizon, adding tension, unease, or a stylized look. Perfect for thrillers, dream sequences, or edgy vibes.",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/39ee2bf5-7f57-47b3-bec1-18a392903181.webp",
+    "start_end_frame": true
+  },
+  {
+    "id": "46fa79e3-efce-41e8-95bc-1dc5a1a30795",
+    "name": "Earth Zoom Out",
+    "description": "The camera pulls back rapidly from the subject to reveal their city, then the continent, and finally the entire Earth. Epic and cinematic—perfect for transitions, scale, or storytelling.",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/60fe4cdc-9baf-4616-a86c-0b0a51b012d8.webp",
+    "start_end_frame": true
+  },
+  {
+    "id": "0c5d9955-706e-4b21-b499-39f1b5e5ea0e",
+    "name": "Eyes In",
+    "description": "Moves the camera close to the subject’s eyes, creating an intense and emotional connection with the viewer",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/a8caa3db-bcf2-4e30-b5fe-37fafdd59140.webp",
+    "start_end_frame": true
+  },
+  {
+    "id": "d6772bfc-272d-4396-a972-deecb09b17cb",
+    "name": "Face Punch",
+    "description": "Captures the sharp, explosive moment of a punch to the face. High impact, raw energy—perfect for action, fight, or intense close-up shots.",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/4c75250f-a508-4d36-b092-25cc0837f127.webp",
+    "start_end_frame": true
+  },
+  {
+    "id": "eeb51fed-dfdc-4b99-804a-6ae8f550e95d",
+    "name": "Fire Breathe",
+    "description": "The subject exhales a burst of flames from their mouth, lighting up the scene with intense heat and motion. Bold and fierce—perfect for fantasy, action, or supernatural power moments.",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/b45ddb3f-d9db-4c70-b1be-b879b87471a5.webp",
+    "start_end_frame": false
+  },
+  {
+    "id": "ec365c4d-c130-48b3-923d-4b4359d96095",
+    "name": "Fisheye",
+    "description": "A wide, distorted lens look that curves the edges of the frame, making everything appear rounded and exaggerated. Adds a fun, surreal, or edgy vibe to the shot.",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/4f1be9d7-7208-40ca-ba59-71bd683eba06.webp",
+    "start_end_frame": true
+  },
+  {
+    "id": "ca339f47-c2a5-4f3f-a1fb-4f12344cd5da",
+    "name": "Floating Fish",
+    "description": "Light blue fish swims in from outside the frame and floats gracefully around her, moving gently through the air as if drifting in invisible water.",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/0543f729-8a81-46c6-8f66-b77c49f3bd4a.webp",
+    "start_end_frame": false
+  },
+  {
+    "id": "6597fc71-86dc-4f65-90c2-11330022cd1c",
+    "name": "Flood",
+    "description": "The water is the moving force — it spreads, rises, and dominates the space.",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/354e35e1-76bf-4fdf-a07c-2d7135af7e2a.webp",
+    "start_end_frame": false
+  },
+  {
+    "id": "f0426395-607f-4753-83e3-85ee2151a840",
+    "name": "Floral Eyes",
+    "description": "An enchanting transformation where vibrant flowers blossom from the subject’s face, merging nature with identity.",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/f4a852f9-ab55-4dcb-b7eb-609d3420e325.webp",
+    "start_end_frame": false
+  },
+  {
+    "id": "1d5ee550-a8b2-4200-8909-4ca7795911dc",
+    "name": "Flying",
+    "description": "Simulates a smooth, gliding flight through the scene, like soaring with a drone. Perfect for epic reveals, dynamic transitions, or creating a sense of freedom and flow.",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/ada09219-82bf-431c-99b5-ee2d3ffcc5a9.webp",
+    "start_end_frame": true
+  },
+  {
+    "id": "797e27b5-2e6e-4b9a-a3c1-d437e9d386fc",
+    "name": "Focus Change",
+    "description": "Shifts the focus from one subject to another in the same shot, guiding the viewer’s attention. Great for storytelling, reveals, or emotional emphasis.",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/6be920df-7048-44ac-8c97-41dd148e9479.webp",
+    "start_end_frame": true
+  },
+  {
+    "id": "7673d9e0-208c-4cf8-8b72-fce5b0e92ecb",
+    "name": "FPV Drone",
+    "description": "Captures fast, fluid shots with a first-person view drone, flying through tight spaces and dynamic paths. Ideal for thrilling, immersive, and cinematic footage.",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/50793a89-af27-435b-b84d-d9f4ad60e22f.webp",
+    "start_end_frame": true
+  },
+  {
+    "id": "9390496c-0547-4a70-98a7-31ad27d334cd",
+    "name": "Freezing",
+    "description": "The subject slowly turns to ice—skin frosts over, breath becomes visible, and motion stops. Cold, dramatic, and perfect for supernatural, winter, or time-stopping effects.",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/0240cc30-b20a-4e14-b227-983aae675bf0.webp",
+    "start_end_frame": true
+  },
+  {
+    "id": "60049b87-68f5-4c34-b833-e2ef3b9d807d",
+    "name": "Garden Bloom",
+    "description": "A lush visual effect where the entire body becomes enveloped in blooming flowers and greenery, as if nature reclaims the subject.",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/3551bfca-fcf2-4f10-9cdb-c30cdfb16b67.webp",
+    "start_end_frame": false
+  },
+  {
+    "id": "31177282-bde3-4870-b283-1135ca0a201a",
+    "name": "General",
+    "description": "A balanced, all-purpose camera style with natural movement and clean framing. Works well for any scene, offering a neutral look without dramatic effects.",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/2da4e4da-effc-4acd-af13-44c3d1c883df.webp",
+    "start_end_frame": true
+  },
+  {
+    "id": "a2046ff7-26fc-4d97-aab7-54bbb55fca97",
+    "name": "Glam",
+    "description": "A high-speed camera moves smoothly around the subject, creating epic, slow-motion shots full of glamour and impact",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/a1f2a76f-c661-4ddb-8d8b-3b5f06db09c3.webp",
+    "start_end_frame": true
+  },
+  {
+    "id": "cb3d5fee-d874-41cf-b0aa-c1092af79da0",
+    "name": "Glowing Fish",
+    "description": "Bioluminescent fish swim gracefully around the subject, casting soft, radiant light. Dreamlike, magical, and perfect for underwater, fantasy, or surreal scenes.",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/bc613890-776b-4792-bbc9-e4d63b03665f.webp",
+    "start_end_frame": false
+  },
+  {
+    "id": "f2db4c02-4d29-4401-a26e-0cf8ae14b9b3",
+    "name": "Glowshift",
+    "description": "The subject is surrounded by a soft, magical light as their form shifts into someone else. Smooth and mystical—perfect for illusions, disguises, or magical transformations.",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/f0b8d110-4302-4b5b-bd16-d5fbb877cebf.webp",
+    "start_end_frame": true
+  },
+  {
+    "id": "5be9d262-82d7-4a74-babf-ee8fefd5c3c3",
+    "name": "Handheld",
+    "description": " Mimics natural, shaky camera movement for a raw and realistic feel. Great for intense scenes, vlogs, or making viewers feel like they're in the moment.",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/2785cca1-c4bc-498f-bdd9-ce0012e8477b.webp",
+    "start_end_frame": true
+  },
+  {
+    "id": "92141609-85f7-4c8a-866e-9a542c164fe9",
+    "name": "Head Explosion",
+    "description": "The subject’s head bursts in a dramatic blast of particles, fire, or surreal effects. Shocking, intense, and perfect for horror, dark comedy, or mind-blowing moments.",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/24e13a90-5e29-4a23-9520-777f8112e181.webp",
+    "start_end_frame": true
+  },
+  {
+    "id": "d57404a2-5d6f-4bce-b9d5-1242666cae02",
+    "name": "Head Off",
+    "description": "The subject’s head detaches and floats or vanishes while the body remains standing. Surreal, eerie, or humorous—perfect for fantasy, glitch, or dreamlike visuals.",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/c768f2a0-a11f-4dc3-828d-3a6c48a7151c.webp",
+    "start_end_frame": false
+  },
+  {
+    "id": "d38d2084-dde6-4c16-90d2-19603bceb901",
+    "name": "Head Tracking",
+    "description": "Keeps the camera locked to the subject’s head movement, making the background shift while the face stays centered. Ideal for immersive, POV-like effects.",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/a3dfd658-664f-41dd-9695-491ebe12d014.webp",
+    "start_end_frame": true
+  },
+  {
+    "id": "aebcaa0d-525d-4a74-b497-26da8f81957b",
+    "name": "Hyperlapse",
+    "description": "A moving timelapse where the camera travels through space over time, creating a fast, fluid journey. Perfect for dynamic cityscapes, travel scenes, or visual storytelling.",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/ee0a4dcf-f056-46ba-a134-4282eafa7c33.webp",
+    "start_end_frame": true
+  },
+  {
+    "id": "cff69c3b-0178-4f72-bae5-e301ccb97f28",
+    "name": "Incline",
+    "description": "The subject moves or stands on a steep angle, as if the entire world is tilted. Creates tension, imbalance, or a surreal, gravity-defying visual effect.",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/113bfe7e-21a1-4df3-b632-5c5e324d439e.webp",
+    "start_end_frame": true
+  },
+  {
+    "id": "7c01086d-92a1-43f8-a69b-63ce07d4f19d",
+    "name": "Innerlight",
+    "description": "A radiant glow builds from within the subject, shining through their skin and eyes. Feels spiritual, powerful, or magical—perfect for transformations, awakenings, or emotional peaks.",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/bc4dc8f3-52d8-4742-b18e-7e4f9501b4df.webp",
+    "start_end_frame": false
+  },
+  {
+    "id": "6fdc8fa8-6373-4a5e-aeac-4aa84c8cfd4b",
+    "name": "Invisible",
+    "description": "The subject vanishes completely—no body, no clothing—leaving only their movement or impact behind. Feels ghostly, surreal, and perfect for sci-fi, stealth, or supernatural edits.",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/ff138484-1b65-428f-ad64-9f3ef5019020.webp",
+    "start_end_frame": true
+  },
+  {
+    "id": "c5b339cd-9f1c-44fe-91a1-464cf83f3749",
+    "name": "Jelly Drift",
+    "description": "Three translucent glowing jellyfish float into the frame behind her, moving elegantly through the air. The woman interacts gently with the jellyfish.",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/e177a421-b9d6-4c75-aa5f-583e8add51fe.webp",
+    "start_end_frame": false
+  },
+  {
+    "id": "2ce412eb-2e66-4d73-9c9c-d1fba4c8a494",
+    "name": "Jib Down",
+    "description": "The camera moves gently downward, focusing on the subject or revealing what's below. Perfect for dramatic entrances or scene reveals.",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/998d01fd-7fe6-4e5f-91a5-eb0a0aa79b3b.webp",
+    "start_end_frame": true
+  },
+  {
+    "id": "cc5d4b42-f05d-41ef-9f51-c4b28f3fd2d2",
+    "name": "Jib Up",
+    "description": "The camera lifts smoothly upward in a vertical motion, revealing more of the scene or emphasizing height. Great for epic intros or transitions.",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/b34448da-7d46-4d4a-8022-a3483ef8b4b1.webp",
+    "start_end_frame": true
+  },
+  {
+    "id": "83a8902b-4531-4893-9ee8-044b2d92b758",
+    "name": "Kiss",
+    "description": "Captures the intimate moment of a kiss with soft focus, slow motion, or dramatic angles. Evokes emotion, romance, and connection between characters.",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/5bb5661c-2876-4a67-bc71-76fbecd8ccb0.webp",
+    "start_end_frame": true
+  },
+  {
+    "id": "ce9dc38e-d6da-4368-9742-f73b559d802e",
+    "name": "Lazy Susan",
+    "description": "Rotates the camera smoothly around a still subject, like it's on a turntable. Great for stylish product shots or dramatic character reveals.",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/1a07799a-65c7-4bc8-a15c-35ce8e78b5a5.webp",
+    "start_end_frame": true
+  },
+  {
+    "id": "080dd954-0d90-4346-8fef-83aebfe63ce5",
+    "name": "Lens Crack",
+    "description": "Simulates a cracked camera lens with visible fractures and light distortion. Adds a raw, damaged, or chaotic feel—perfect for action, horror, or glitchy edits.",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/1b196aab-9ebc-4ea4-8d36-685d05eaa1c3.webp",
+    "start_end_frame": true
+  },
+  {
+    "id": "e98b3fee-79e8-4d87-881c-8ddd03ca738e",
+    "name": "Lens Flare",
+    "description": "Light hits the lens, creating bright streaks or spots. Adds a dreamy, cinematic, or dramatic feel to your shots",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/b8de1ca8-5fbc-4a99-b1df-d8d9cc4aeb54.webp",
+    "start_end_frame": true
+  },
+  {
+    "id": "0a5a48d7-6716-41a4-9a9f-7ad9229c879b",
+    "name": "Levitation",
+    "description": "The subject floats or rises smoothly off the ground, defying gravity. Creates a dreamy, magical, or surreal atmosphere perfect for fantasy or artistic visuals.",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/1825dcff-da3d-442b-b1dc-4f1bfe9006b5.webp",
+    "start_end_frame": true
+  },
+  {
+    "id": "790ca797-703e-44c1-8d77-53080ea3c6a3",
+    "name": "Low Shutter",
+    "description": "Creates motion blur by lowering the shutter speed, giving your video a dreamy, streaky, or intense action look. Perfect for stylized or high-energy scenes.",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/83b2fcf3-2aad-47ad-8d25-c385058dbe98.webp",
+    "start_end_frame": true
+  },
+  {
+    "id": "473fd7e0-18f5-467f-a146-3b6cbfddf46a",
+    "name": "Medusa Gorgona",
+    "description": "The subject’s body slowly hardens and cracks as skin turns to cold, gray stone—freezing in place like a living statue. A dramatic, mythical transformation perfect for fantasy or curse effects.",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/f671aafc-1e4b-4ab4-916d-0736b3edb8c2.webp",
+    "start_end_frame": true
+  },
+  {
+    "id": "eb3b0cd9-f924-410c-94c7-9e1850ed04c7",
+    "name": "Melting",
+    "description": "The subject visibly softens and melts under intense heat—skin, clothes, or objects start to drip and distort. Evokes extreme temperature, tension, or surreal discomfort.",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/208e5e19-956c-48a2-afb7-8ca822c29a23.webp",
+    "start_end_frame": true
+  },
+  {
+    "id": "70f3014c-ee77-4c33-83b9-7f7e68726aa9",
+    "name": "Moonwalk Left",
+    "description": "The classic gliding move performed while moving left, with the body facing forward. Timeless, smooth, and packed with cool retro style.",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/9fdd4463-2e38-4419-a956-aa9645a9343e.webp",
+    "start_end_frame": true
+  },
+  {
+    "id": "cf8c7490-7bc0-433d-860c-d1be982a520a",
+    "name": "Moonwalk Right",
+    "description": "A smooth, gliding backward walk while facing forward, moving to the right. Iconic, stylish, and full of retro energy—perfect for dance or character flair.",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/7462c8c3-5c55-43e6-9ad5-42e7e07ddce8.webp",
+    "start_end_frame": true
+  },
+  {
+    "id": "8968b3f5-8d71-432a-a579-2d1aeae21439",
+    "name": "Morphskin",
+    "description": "The subject’s body morphs in real time—skin ripples, textures shift, and their form transforms into a new identity. Smooth, fluid, and perfect for shapeshifter or disguise effects.",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/01e0631b-8c10-4441-8617-80c638eb29f8.webp",
+    "start_end_frame": true
+  },
+  {
+    "id": "21bbd0c4-ca4f-4ea3-82a8-607437d63e8e",
+    "name": "Mouth In",
+    "description": "Zooms swiftly into the character’s mouth for a fun, quirky, or surreal transition. Ideal for adding humor or exaggerating expressions.",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/de3a76d1-79c8-48c4-89ad-60d540c9dcde.webp",
+    "start_end_frame": true
+  },
+  {
+    "id": "b29cff3b-2494-4f3f-a74c-70ceee7b1ccf",
+    "name": "Object POV",
+    "description": "Shows the scene from the object’s point of view, making viewers feel like they're seeing through its \"eyes.\" Great for immersive, creative storytelling.",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/73e179b1-f7b1-4c08-93e2-b0b9e1a3488c.webp",
+    "start_end_frame": true
+  },
+  {
+    "id": "40245735-2670-4572-b46e-854151281f55",
+    "name": "Overhead",
+    "description": "The camera is positioned above the subject, smoothly tracking their movement. Great for showing layout, movement, or creating a stylized, cinematic look.",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/38a4496e-a365-4a61-a817-8ea8456d9871.webp",
+    "start_end_frame": true
+  },
+  {
+    "id": "aa8d80db-ca0e-4535-952f-6fa040f2306b",
+    "name": "Paint Splash",
+    "description": "The object or subject transforms into a burst of liquid paint—splattering outward in colorful, fluid motion. Surreal and expressive, ideal for artistic transitions or dramatic visual effects.",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/5489c3c9-2640-4771-81cc-988ee08c742e.webp",
+    "start_end_frame": false
+  },
+  {
+    "id": "556ab276-23b1-4604-a501-2513a71e2eea",
+    "name": "Paparazzi",
+    "description": "Flashes burst rapidly around the subject, simulating a crowd of cameras snapping photos. Glamorous, chaotic, or overwhelming—perfect for celebrity, fashion, or red carpet vibes.",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/4cea9b15-ec06-4afd-9825-74326f158e62.webp",
+    "start_end_frame": true
+  },
+  {
+    "id": "7aa6fbad-55eb-4930-bf75-cc9a2f0b3b5b",
+    "name": "Powder Explosion",
+    "description": "A burst of colorful or dusty powder erupts around the subject, filling the frame with texture and motion. Perfect for dramatic entrances, dance shots, or high-impact visual flair.",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/90b58e4b-8877-4081-a82b-4941a8e99a73.webp",
+    "start_end_frame": true
+  },
+  {
+    "id": "30a02896-cdda-469d-9ed9-52cbba1c04a8",
+    "name": "Push To Glass",
+    "description": "The subject is forcefully pushed against an invisible glass surface—face and body squash and distort on impact. Intense, dramatic, and perfect for adding tension or comedic exaggeration.",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/e803055c-62bb-4b5d-a785-fc98d405e8a7.webp",
+    "start_end_frame": true
+  },
+  {
+    "id": "c3dbf04b-2ba5-4986-ab4f-872a9d71826f",
+    "name": "Rap Flex",
+    "description": "Mimics iconic camera moves from rap music videos—smooth slides, low angles, and slow zooms. Perfect for giving your video a bold, confident, star-like vibe.",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/093c2008-41a1-4cd8-8148-f30698a07378.webp",
+    "start_end_frame": true
+  },
+  {
+    "id": "153afe86-20f1-45d3-99ea-106c37f94506",
+    "name": "Robo Arm",
+    "description": "Uses a high-speed robotic camera to create fast, precise, and cinematic movements. Ideal for smooth motion shots, product reveals, or dynamic transitions.",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/0773c3e3-ce50-4019-bccf-b0617e472944.webp",
+    "start_end_frame": true
+  },
+  {
+    "id": "c718443d-fc3c-4a79-bccf-6c98b56737ec",
+    "name": "Roll Transition",
+    "description": "The scene spins forward like a rolling wheel, smoothly transitioning from the start frame to the end frame. Clean, dynamic, and perfect for stylish edits or seamless scene changes.",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/98343f45-5519-404a-9c90-b4d9312c0a4f.webp",
+    "start_end_frame": true
+  },
+  {
+    "id": "ba778a3b-e6ff-4563-9253-a8ae4e04b1a7",
+    "name": "Sand Storm",
+    "description": "A powerful blast of sand sweeps through the scene, partially or fully engulfing the subject. Dust swirls, visibility drops—ideal for desert chaos, dramatic reveals, or elemental visuals.",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/54fd018a-f86f-4630-98c1-43499a9e47f7.webp",
+    "start_end_frame": true
+  },
+  {
+    "id": "3f003f41-dbdc-41d9-94a8-de3942ebeb67",
+    "name": "Set on Fire",
+    "description": "The subject bursts into flames in an instant, engulfed by intense fire. Dramatic and powerful—perfect for action scenes, supernatural moments, or explosive visuals.",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/61d282a0-e485-4408-8f24-eee02eef2dea.webp",
+    "start_end_frame": true
+  },
+  {
+    "id": "26864aa2-010c-458c-bdf5-963babc756d2",
+    "name": "Skateboard Glide",
+    "description": "Smooth, flowing motion as the board rolls effortlessly. Relaxed and stylish, perfect for cruising scenes or aesthetic edits.",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/20fb4b13-541c-43c8-ac91-45a0614889a2.webp",
+    "start_end_frame": true
+  },
+  {
+    "id": "023bf31f-23d2-4432-90be-cab4ae332e59",
+    "name": "Skateboard Ollie",
+    "description": "The classic jump where the rider and board lift off the ground without using hands. Clean, stylish, and the foundation of almost every trick.",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/d163498c-e29d-41e5-ade1-50bb6e8b581f.webp",
+    "start_end_frame": true
+  },
+  {
+    "id": "2bf184fb-47a3-41ba-93ac-846b9307b1bd",
+    "name": "Skate Cruise",
+    "description": "Smooth, relaxed riding without tricks—just pushing and gliding through the streets. Feels calm, effortless, and stylish. Perfect for chill, aesthetic edits or street vibes.",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/56374da8-463b-4072-8e8b-c951c8e2077d.webp",
+    "start_end_frame": true
+  },
+  {
+    "id": "9015dd00-4325-4679-b3da-bb25cd948899",
+    "name": "Ski Carving",
+    "description": "Shows a skier making clean, fast turns on the slope. Dynamic, smooth, and elegant—ideal for scenic mountain action.",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/1b92b32b-590a-450f-8966-fab196494e33.webp",
+    "start_end_frame": true
+  },
+  {
+    "id": "8c8f12b1-732f-4faf-8b2b-6029b964afd3",
+    "name": "Skin Surge",
+    "description": "Objects like hands, flowers, or surreal forms emerge smoothly from the subject’s skin, as if breaking through a living surface. Organic, eerie, or poetic—perfect for fantasy, horror, or dreamlike visuals.",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/23d1c700-712b-4965-8faf-a9d0778503c1.webp",
+    "start_end_frame": true
+  },
+  {
+    "id": "e65a92e6-7a9e-43ce-8d35-6f6a16bfe716",
+    "name": "Ski Powder",
+    "description": "Captures a skier cutting through deep snow with soft, explosive bursts. Dreamy and powerful, with a sense of freedom.",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/181fc691-e657-4031-bea6-f388fcc2015d.webp",
+    "start_end_frame": true
+  },
+  {
+    "id": "984834d9-72a7-4074-97c2-f98d265a49de",
+    "name": "Snorricam",
+    "description": "The movement captures the rhythm of the actor’s steps, creating a disorienting, visceral effect that emphasizes tension or distress’",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/a5bc6138-5876-4539-bac0-019c50dc164a.webp",
+    "start_end_frame": true
+  },
+  {
+    "id": "f933ee1b-329e-41e9-8aad-5a1f60ecd6f5",
+    "name": "Snowboard Carving",
+    "description": "Highlights deep, controlled turns on a snowboard, with snow spraying out as the board slices the slope. Stylish and precise.",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/308d6a66-fe46-4b1c-a78f-d287f0241313.webp",
+    "start_end_frame": true
+  },
+  {
+    "id": "f6fdf448-6309-497b-85ee-79517a9ff097",
+    "name": "Snowboard Powder",
+    "description": "Follows a snowboarder floating through fresh powder with wide turns and big sprays. Feels smooth, wild, and free.",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/b928a301-9609-4948-a045-5a4a79481b5c.webp",
+    "start_end_frame": true
+  },
+  {
+    "id": "87d67a56-8d80-42db-8e1c-ebc3d2483cbd",
+    "name": "Soul Jump",
+    "description": "The subject’s soul visibly leaves the body—floating or leaping outward in a surreal, dreamlike motion. Perfect for magical, spiritual, or out-of-body visuals.",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/5603662c-9c62-4a48-981d-bbd4f7b948fc.webp",
+    "start_end_frame": true
+  },
+  {
+    "id": "fa3ddb7c-53ee-4383-aa17-97ae65f180e5",
+    "name": "Static",
+    "description": "The camera remains completely still, with no motion or shake. Clean, neutral, and steady—ideal for dialogue scenes or minimalist aesthetics.",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/b9f3f5c2-6fd9-40fb-830b-494d3bbec61d.webp",
+    "start_end_frame": true
+  },
+  {
+    "id": "b604bd5f-22eb-4920-ad7e-47306805d7c6",
+    "name": "Super 8MM",
+    "description": "Grainy texture, soft flicker, and warm faded tones with light leaks and frame jitter. Evokes a nostalgic, dreamy mood like old home movies from the 60s–70s.",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/44593059-fc54-4b63-a3b8-e83f43e9a59f.png",
+    "start_end_frame": false
+  },
+  {
+    "id": "3a24a20d-b494-4e8a-9b5f-4ef05ee5073d",
+    "name": "Super Dolly In",
+    "description": "Smoothly moves the camera straight toward the subject for a focused, cinematic effect. Great for building tension, emotion, or spotlighting key moments.",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/2752aac4-ba4f-40cc-ba8e-bb0e035263fa.webp",
+    "start_end_frame": true
+  },
+  {
+    "id": "679c128d-a109-4267-8007-12f653f6346d",
+    "name": "Super Dolly Out",
+    "description": "Smoothly pulls the camera away from the subject, revealing more of the scene. Perfect for dramatic exits, emotional distance, or scene transitions.",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/11e1148f-0abc-46c9-a8ca-ca7d05d006cd.webp",
+    "start_end_frame": true
+  },
+  {
+    "id": "20a5fdc3-c92b-4134-900c-4f47bbb0edb7",
+    "name": "Tentacles",
+    "description": "A surreal VFX effect where tentacles emerge from a person’s eyes, twisting and moving as if alive. Adds a creepy, otherworldly vibe perfect for horror or sci-fi scenes.",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/2cc32411-1505-4970-9cb3-948a9519184c.webp",
+    "start_end_frame": true
+  },
+  {
+    "id": "ebf152b3-f794-4d5c-886f-ff61ec6498bc",
+    "name": "Through Object In",
+    "description": "Moves the camera inward through an object to focus on the subject behind it. Perfect for creative reveals and smooth, immersive transitions.",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/8f7f02c5-5949-488c-9d13-72289f7d895b.webp",
+    "start_end_frame": true
+  },
+  {
+    "id": "ea0d11ac-b4e2-4ea7-89c2-a4a44a62dc79",
+    "name": "Through Object Out",
+    "description": "Moves the camera outward through an object, revealing the scene behind it. Creates a smooth, creative transition and adds depth to your storytelling.",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/22c6a0a1-12aa-4370-a4dd-76c21f53ccbb.webp",
+    "start_end_frame": true
+  },
+  {
+    "id": "27169770-288b-4ee7-b3ab-bb2bcf0e136b",
+    "name": "Thunder God",
+    "description": "Eyes glow with intense, electric energy while lightning flickers around the subject. Evokes divine power, rage, or transformation—perfect for epic, supernatural moments.",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/1abf9bb7-8dfd-42b1-80a8-9ebd48e10487.webp",
+    "start_end_frame": true
+  },
+  {
+    "id": "ff67b0eb-a621-45a0-b92d-ce2549250149",
+    "name": "Tilt Down",
+    "description": "Rotates the camera angle downward, revealing what’s below or shifting focus. Great for dramatic reveals, transitions, or guiding the viewer’s eye.",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/ddb110fb-f6b8-4ffe-ad0b-0f786c43c2c9.webp",
+    "start_end_frame": true
+  },
+  {
+    "id": "2c9af101-fe7a-4299-91f3-e44431a0576f",
+    "name": "Tilt up",
+    "description": "Moves the camera upward to reveal something or make the subject feel powerful, grand, or important",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/08061cc1-0d1f-45a6-95ae-1be94050bf81.webp",
+    "start_end_frame": true
+  },
+  {
+    "id": "9463e9ef-3242-46bf-b1ec-41eec6b2d6bf",
+    "name": "Timelapse Human",
+    "description": "Speeds up human motion while the environment stays natural, showing quick movements like walking, dressing, or dancing. Adds energy, urgency, or a surreal, fast-forwarded feel.",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/133518a8-63da-42df-8e73-45794996beaf.webp",
+    "start_end_frame": true
+  },
+  {
+    "id": "130b5a9d-522f-467b-bb22-a9109c1710c1",
+    "name": "Timelapse Landscape",
+    "description": "Captures the rapid movement of natural elements like clouds, sunlight, or crowds over time. Creates a majestic, dreamlike view of changing landscapes and passing moments.",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/cfe7997a-661d-43c1-a490-1f73f26fca93.webp",
+    "start_end_frame": true
+  },
+  {
+    "id": "3e735d99-34f6-469c-83fb-ba608f299424",
+    "name": "Turning Metal",
+    "description": "The subject’s skin and body slowly transform into reflective, metallic surfaces—like silver, gold, or chrome. Feels powerful, surreal, and perfect for sci-fi or high-fashion edits.",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/d44a136d-8b78-49c8-bf3d-889e5f30c547.webp",
+    "start_end_frame": true
+  },
+  {
+    "id": "2b7c1db3-862a-4373-8435-ae4464ae5892",
+    "name": "VHS",
+    "description": "Faded colors, static noise, scan lines, and tracking glitches with a soft blur. Feels like a worn-out 80s–90s videotape, raw and nostalgic.",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/b605e844-3d92-479c-9fc6-f46b663cf094.png",
+    "start_end_frame": false
+  },
+  {
+    "id": "25c72c28-7857-4aa0-af92-ba5380f0e67d",
+    "name": "Whip Pan",
+    "description": "A fast camera pan that blurs the scene, used to transition between shots or add energy and speed. Great for action, comedy, or sudden scene changes.",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/f9869382-f2d1-4a08-956a-b10826f22c33.webp",
+    "start_end_frame": true
+  },
+  {
+    "id": "8a660d27-dfe9-4bb1-8ad0-c6603e79fc95",
+    "name": "Wiggle",
+    "description": "Combines slight shaky “wiggle” motion with a smooth zoom or pan to reveal the subject. Adds playful energy and keeps the shot dynamic and engaging, perfect for stylish intros or creative reveals.",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/65afbb9c-4061-434b-98da-8ab9db721854.webp",
+    "start_end_frame": true
+  },
+  {
+    "id": "e8027924-b97d-43c3-9676-3c0f16da6c5f",
+    "name": "Wind to Face",
+    "description": "Intense wind blasts the subject with extreme force—hair whips, clothes thrash, and the body leans into the pressure. Creates a dramatic, chaotic, or high-impact visual moment.",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/1c7da47c-4eed-491e-80fb-be89826ce230.webp",
+    "start_end_frame": true
+  },
+  {
+    "id": "bd639dee-00a3-407b-b539-f4516ce9d214",
+    "name": "YoYo Zoom",
+    "description": "A rapid in-and-out zoom motion that mimics the snap of a yoyo—fast, playful, and punchy. Adds energy, tension, or comic effect to your scene.",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/bfbda22a-9942-4209-9a9d-51895c57e654.webp",
+    "start_end_frame": true
+  },
+  {
+    "id": "fbcbec5b-30f8-4b17-ba6e-8e8d5b265562",
+    "name": "Zoom In",
+    "description": "Gradually moves closer to the subject, building focus, tension, or emotional intensity",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/6b4b2b35-495c-44da-8896-68a7e285fc13.webp",
+    "start_end_frame": true
+  },
+  {
+    "id": "263600e4-45c0-4c13-9579-40a9278af37c",
+    "name": "Zoom Out",
+    "description": "Gradually pulls back to reveal more of the scene, creating distance, suspense, or a sense of isolation",
+    "preview_url": "https://d1xarpci4ikg0w.cloudfront.net/64d85111-d7e0-4157-9d05-a317768c136c.webp",
+    "start_end_frame": true
+  }
+]

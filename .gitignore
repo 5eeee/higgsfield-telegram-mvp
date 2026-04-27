@@ -1,0 +1,14 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.env
+*.log
+smoke_out/
+earth_cache.json
+# ad-hoc local test artifacts (repo root)
+/sd_frame_*.jpg
+/seedance_test.mp4
+/smoke_face.jpg
+assets/logo-preview-*.png
+docs/*CREDENTIALS*.md

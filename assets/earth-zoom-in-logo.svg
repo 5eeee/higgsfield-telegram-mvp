@@ -1,0 +1,72 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="bg" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(512 512) rotate(90) scale(600)">
+      <stop offset="0" stop-color="#1A2A5E"/>
+      <stop offset="0.55" stop-color="#0A122F"/>
+      <stop offset="1" stop-color="#02040C"/>
+    </radialGradient>
+    <radialGradient id="earth" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(460 452) rotate(45) scale(260)">
+      <stop offset="0" stop-color="#8AE4FF"/>
+      <stop offset="0.45" stop-color="#3A9CFF"/>
+      <stop offset="1" stop-color="#12337A"/>
+    </radialGradient>
+    <linearGradient id="face" x1="448" y1="355" x2="610" y2="650" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#F2F8FF"/>
+      <stop offset="1" stop-color="#9EC6FF"/>
+    </linearGradient>
+    <linearGradient id="zoomTrail" x1="180" y1="870" x2="880" y2="180" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#6EE0FF" stop-opacity="0"/>
+      <stop offset="0.4" stop-color="#6EE0FF" stop-opacity="0.65"/>
+      <stop offset="0.85" stop-color="#DFF5FF" stop-opacity="0.15"/>
+      <stop offset="1" stop-color="#DFF5FF" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="18" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1024" height="1024" rx="228" fill="url(#bg)"/>
+
+  <!-- starfield -->
+  <circle cx="820" cy="220" r="3" fill="#DFF5FF" opacity="0.9"/>
+  <circle cx="780" cy="300" r="2" fill="#DFF5FF" opacity="0.7"/>
+  <circle cx="880" cy="360" r="2.5" fill="#DFF5FF" opacity="0.8"/>
+  <circle cx="200" cy="240" r="2" fill="#DFF5FF" opacity="0.7"/>
+  <circle cx="150" cy="640" r="3" fill="#DFF5FF" opacity="0.8"/>
+  <circle cx="260" cy="820" r="2" fill="#DFF5FF" opacity="0.6"/>
+  <circle cx="700" cy="820" r="2" fill="#DFF5FF" opacity="0.6"/>
+
+  <!-- zoom trails -->
+  <path d="M180 870L860 200" stroke="url(#zoomTrail)" stroke-width="44" stroke-linecap="round"/>
+  <path d="M220 900L900 230" stroke="url(#zoomTrail)" stroke-width="14" stroke-linecap="round" opacity="0.8"/>
+
+  <!-- zoom rings -->
+  <circle cx="512" cy="512" r="440" stroke="#9EDBFF" stroke-width="2" opacity="0.16"/>
+  <circle cx="512" cy="512" r="390" stroke="#87CCFF" stroke-width="2" opacity="0.22"/>
+  <circle cx="512" cy="512" r="340" stroke="#5DA2FF" stroke-width="3" opacity="0.32"/>
+  <circle cx="512" cy="512" r="276" stroke="#4A78E6" stroke-width="2" opacity="0.55"/>
+  <circle cx="512" cy="512" r="220" stroke="#6A9AFF" stroke-width="3" opacity="0.7"/>
+
+  <!-- halo behind earth -->
+  <circle cx="512" cy="512" r="190" fill="#3A9CFF" opacity="0.35" filter="url(#glow)"/>
+
+  <!-- earth -->
+  <circle cx="512" cy="512" r="175" fill="url(#earth)"/>
+  <!-- continents stylised -->
+  <path d="M426 454C448 432 471 434 482 450C495 468 495 501 472 522C450 544 427 550 409 537C389 523 393 486 426 454Z" fill="#2FD08A" opacity="0.9"/>
+  <path d="M560 430C585 414 616 417 632 442C647 467 640 500 615 519C590 539 558 536 543 512C529 490 536 445 560 430Z" fill="#37E39A" opacity="0.92"/>
+  <path d="M531 566C556 550 591 559 606 586C621 612 612 646 585 661C558 675 525 666 510 640C497 616 504 584 531 566Z" fill="#2AB87E" opacity="0.88"/>
+
+  <!-- face silhouette overlay -->
+  <path d="M452 392C482 378 517 383 544 410C565 431 575 457 574 495C573 528 560 557 538 579C522 596 518 623 533 654" stroke="url(#face)" stroke-width="26" stroke-linecap="round" stroke-linejoin="round" opacity="0.9"/>
+  <circle cx="486" cy="450" r="9" fill="#F2F8FF"/>
+  <path d="M474 516C489 528 510 528 528 518" stroke="#F2F8FF" stroke-width="9" stroke-linecap="round"/>
+
+  <!-- outer decorative arc (zoom motion) -->
+  <path d="M120 712C260 860 520 904 744 800" stroke="#6EE0FF" stroke-width="3" stroke-linecap="round" opacity="0.3" fill="none"/>
+  <path d="M280 148C460 86 664 110 824 220" stroke="#6EE0FF" stroke-width="3" stroke-linecap="round" opacity="0.3" fill="none"/>
+</svg>
