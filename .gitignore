@@ -12,3 +12,5 @@ earth_cache.json
 /smoke_face.jpg
 assets/logo-preview-*.png
 docs/*CREDENTIALS*.md
+node_modules/
+.next/

@@ -10,7 +10,6 @@ from dotenv import load_dotenv
 class Settings:
     telegram_bot_token: str
     telegram_proxy: str | None
-
     hf_api_key: str
     hf_api_secret: str
 
@@ -18,6 +17,7 @@ class Settings:
     hf_max_wait_seconds: int
     hf_http_timeout_seconds: int
     hf_upload_timeout_seconds: int
+    telegram_proxy_source: str | None = None
 
     @property
     def hf_auth_header(self) -> str:
@@ -36,6 +36,15 @@ def _optional(name: str) -> str | None:
     return value or None
 
 
+def _resolve_telegram_proxy() -> tuple[str | None, str | None]:
+    """Prefer ``TELEGRAM_PROXY``, else standard proxy envs (many VPNs set these globally)."""
+    for key in ("TELEGRAM_PROXY", "HTTPS_PROXY", "ALL_PROXY", "HTTP_PROXY"):
+        value = _optional(key)
+        if value:
+            return value, key
+    return None, None
+
+
 def load_settings() -> Settings:
     load_dotenv()
     combined_key = os.getenv("HF_KEY", "").strip()
@@ -51,13 +60,16 @@ def load_settings() -> Settings:
             "or HF_KEY=key_id:key_secret.",
         )
 
+    proxy_url, proxy_key = _resolve_telegram_proxy()
+
     return Settings(
         telegram_bot_token=_require("TELEGRAM_BOT_TOKEN"),
-        telegram_proxy=_optional("TELEGRAM_PROXY"),
+        telegram_proxy=proxy_url,
         hf_api_key=hf_api_key,
         hf_api_secret=hf_api_secret,
         hf_poll_interval_seconds=int(_require("HF_POLL_INTERVAL_SECONDS", "3")),
         hf_max_wait_seconds=int(_require("HF_MAX_WAIT_SECONDS", "420")),
         hf_http_timeout_seconds=int(_require("HF_HTTP_TIMEOUT_SECONDS", "60")),
         hf_upload_timeout_seconds=int(_require("HF_UPLOAD_TIMEOUT_SECONDS", "120")),
+        telegram_proxy_source=proxy_key,
     )

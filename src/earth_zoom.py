@@ -48,15 +48,18 @@ EARTH_SOUL_PROMPT: Final[str] = (
 # English tends to follow camera vocabulary reliably on this API.
 EARTH_ZOOM_IN_DOP_PROMPT: Final[str] = (
     "Single continuous camera pullback from the subject, one long take, no "
-    "cuts. After the first frames on the person, the camera gains altitude: "
-    "first pass through a thin cloud layer, then a wide, photoreal, sharp "
-    "aerial view of a real city and landscape — clear buildings, streets, "
-    "parks, natural daylight, high detail, not painterly, not stylized, not "
-    "a texture collage. The ground and urban leg must look like a real "
-    "satellite or drone pass (stable perspective, no fisheye 'tiny planet', "
-    "no second Earth globe in the frame). Then continue rising through haze to "
-    "the black sky and end on a full photoreal Earth disk in space, matching "
-    "the end keyframe. Smooth, coherent geography throughout."
+    "cuts. Open on the subject only — preserve facial identity and likeness; "
+    "do not transplant props, furniture, chairs, indoor clutter, windowsills, "
+    "floor texture, or wall detail from the photo onto roads, pavement, roofs, "
+    "or aerial terrain. Interior-only objects must never appear sitting on "
+    "streets or outside geography during the climb; mid-flight ground views must "
+    "show plausible outdoor city or landscape unrelated to indoor mess from the "
+    "still frame — no pasted foreground junk from the picture onto asphalt or "
+    "fields. After the opening beat the camera gains altitude: thin clouds, "
+    "then a wide photoreal aerial pass — sharp buildings, streets, parks, "
+    "natural daylight, stable drone/satellite perspective (no fisheye tiny "
+    "planet, no second Earth globe). Rise through haze to black sky and match "
+    "the Earth keyframe at the end. Smooth coherent geography throughout."
 )
 
 # Slightly below max — reduces warping in the hard middle segment; raise if

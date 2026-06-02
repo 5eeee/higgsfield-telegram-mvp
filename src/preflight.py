@@ -6,6 +6,7 @@ import uuid
 import aiohttp
 
 from src.config import load_settings
+from src.telegram_proxy_probe import discover_local_telegram_proxy
 from src.higgsfield_api import HIGGSFIELD_BASE_URL
 
 
@@ -71,17 +72,36 @@ async def main() -> None:
         print(f"Configuration: FAIL - {exc}")
         raise SystemExit(1)
 
-    if settings.telegram_proxy:
-        print(f"Telegram proxy: {settings.telegram_proxy}")
+    tg_proxy = settings.telegram_proxy
+    tg_src = settings.telegram_proxy_source
+    if not tg_proxy:
+        discovered = await discover_local_telegram_proxy(settings.telegram_bot_token)
+        if discovered:
+            tg_proxy = discovered
+            tg_src = "auto_local_probe"
+
+    if tg_proxy:
+        src = tg_src or "TELEGRAM_PROXY"
+        print(f"Telegram proxy: {tg_proxy!r} (from {src})")
+    else:
+        print("Telegram proxy: (none — direct HTTPS; TG in-app MTProto does not apply)")
 
     telegram_ok, telegram_message = await _check_telegram(
         settings.telegram_bot_token,
-        settings.telegram_proxy,
+        tg_proxy,
     )
     hf_ok, hf_message = await _check_higgsfield(settings.hf_auth_header)
 
     print(f"Telegram:   {'OK' if telegram_ok else 'FAIL'} - {telegram_message}")
     print(f"Higgsfield: {'OK' if hf_ok else 'FAIL'} - {hf_message}")
+
+    if not telegram_ok:
+        print(
+            "\nTelegram недоступен: часто VPN в браузере не трогает Python. "
+            "В настройках VPN найдите локальный HTTP/SOCKS порт и добавьте в .env, "
+            "например: TELEGRAM_PROXY=socks5://127.0.0.1:1080\n"
+            "См. раздел «Telegram: VPN и прокси» в README.md.",
+        )
 
     if not telegram_ok or not hf_ok:
         raise SystemExit(1)

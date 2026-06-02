@@ -84,14 +84,35 @@ python -m src.bot
 TELEGRAM_BOT_TOKEN=...
 HF_API_KEY=...
 HF_API_SECRET=...
-# Если api.telegram.org недоступен (регион/фаервол):
+# Прокси до api.telegram.org (приоритет: TELEGRAM_PROXY, затем HTTPS_PROXY, ALL_PROXY, HTTP_PROXY):
 # TELEGRAM_PROXY=socks5://127.0.0.1:1080
+# Прокси «в настройках Telegram» (MTProto) на бота не действует — нужен SOCKS/HTTP выше.
 
 HF_POLL_INTERVAL_SECONDS=3
 HF_MAX_WAIT_SECONDS=420
 HF_HTTP_TIMEOUT_SECONDS=60
 HF_UPLOAD_TIMEOUT_SECONDS=120
 ```
+
+### Telegram: «VPN включён, а бот не отвечает»
+
+**Прокси в настройках приложения Telegram** (MTProto) влияет **только** на клиент TG.
+Бот — это **отдельный** процесс `python` и ходит в **Bot API (HTTPS)**, туда MTProto
+не подставляется.
+
+**Браузер** и **Python** — тоже разные: часть VPN прокидывает только Chrome.
+
+1. С версии в репо бот подхватывает **`HTTPS_PROXY` / `HTTP_PROXY` / `ALL_PROXY`**
+   (как `curl` и многие VPN). Если в системе задано — часто **ничего в `.env`**
+   вручную не нужно. Приоритет: `TELEGRAM_PROXY` > `HTTPS_PROXY` > `ALL_PROXY` > `HTTP_PROXY`.
+   Если прокси в env нет, при старте **перебираются типичные локальные порты** (Clash `7890`,
+   SOCKS `1080`/`10808`, …) — если клиент VPN слушает один из них, бот подключится сам.
+2. Проверка: `python -m src.preflight` — строка `Telegram:` должна быть **OK**.  
+3. Если **FAIL**: в клиенте VPN включите **локальный** порт (часто **HTTP 7890**,
+   **SOCKS5 1080** / 10808) и пропишите в `.env`, например
+   `TELEGRAM_PROXY=socks5://127.0.0.1:1080` (или `http://127.0.0.1:7890`).  
+4. Либо VPN в режиме **полного туннеля** (TUN, «all apps / system»), снова preflight
+   и бот.
 
 ## Параметры рендера (см. `src/earth_zoom.py`)
 

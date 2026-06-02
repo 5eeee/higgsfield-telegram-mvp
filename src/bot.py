@@ -16,17 +16,19 @@ from PIL import Image, ImageOps
 from aiogram import Bot, Dispatcher, F, Router
 from aiogram.client.session.aiohttp import AiohttpSession
 from aiogram.enums import ParseMode
-from aiogram.exceptions import TelegramNetworkError
+from aiogram.exceptions import TelegramNetworkError, TelegramUnauthorizedError
 from aiogram.filters import Command, CommandStart
 from aiogram.fsm.storage.memory import MemoryStorage
 from aiogram.types import (
     BotCommand,
     BufferedInputFile,
     Document,
+    FSInputFile,
     Message,
 )
 
 from src.config import load_settings
+from src.telegram_proxy_probe import discover_local_telegram_proxy
 from src.earth_cache import get_or_generate_earth_url, preload_earth_url
 from src.earth_zoom import (
     ASPECT_RATIO,
@@ -71,6 +73,24 @@ logging.basicConfig(
 logger = logging.getLogger("earth-zoom-bot")
 
 router = Router()
+
+
+def _ffmpeg_exe() -> str | None:
+    """Prefer PATH ffmpeg; else bundled binary from ``imageio-ffmpeg`` (Windows-friendly).
+
+    Without this, reversal falls back to imageio frame decode (~40 MB buffers,
+    huge uploads through Telegram proxy).
+    """
+    path = shutil.which("ffmpeg")
+    if path:
+        return path
+    try:
+        import imageio_ffmpeg
+
+        return imageio_ffmpeg.get_ffmpeg_exe()
+    except Exception:
+        return None
+
 
 BOT_COMMANDS: list[BotCommand] = [
     BotCommand(command="start", description="Как пользоваться ботом"),
@@ -280,30 +300,45 @@ async def _wait_and_deliver(
 
 async def _send_video_with_retries(
     message: Message,
-    video_bytes: bytes | None,
     video_url: str,
+    *,
+    local_path: str | None = None,
+    video_bytes: bytes | None = None,
 ) -> bool:
-    """Try to send the video: bytes first, then URL fallback, with retries.
+    """Send reversed video: prefer FSInputFile from disk (streams), then bytes, then CDN URL.
 
-    Large uploads (20+ MB) over flaky networks frequently hit the Telegram
-    session timeout. We retry twice on bytes, then fall back to URL send
-    (Telegram pulls from the Higgsfield CDN directly — no client upload).
+    Local upload goes through the bot host twice if we buffer whole-file bytes in RAM.
+    Using a temp file + FSInputFile reduces memory churn and lets aiohttp stream.
+    Last resort: Telegram fetches ``video_url`` from Higgsfield (no bot upload —
+    fastest when usable; URL points at unreversed asset).
     """
-    size_mb = (len(video_bytes) / 1024 / 1024) if video_bytes else 0.0
-    last_exc: BaseException | None = None
+    size_mb = 0.0
+    if local_path and os.path.isfile(local_path):
+        size_mb = os.path.getsize(local_path) / 1024 / 1024
+    elif video_bytes:
+        size_mb = len(video_bytes) / 1024 / 1024
 
-    # Attempt 1: upload bytes (generous timeout for big files on slow links).
-    if video_bytes:
+    # Attempt 1: upload from bot (file stream or RAM).
+    if local_path or video_bytes:
+        if local_path and os.path.isfile(local_path):
+            video_arg: BufferedInputFile | FSInputFile = FSInputFile(
+                local_path, filename="earth_zoom_in.mp4",
+            )
+            upload_label = "Video upload (file)"
+        else:
+            assert video_bytes is not None
+            video_arg = BufferedInputFile(video_bytes, filename="earth_zoom_in.mp4")
+            upload_label = "Video upload (bytes)"
         delivered = await _retry_telegram_network_call(
-            label="Video upload",
+            label=upload_label,
             attempts=2,
             pause_seconds=8,
             sender=lambda: message.answer_video(
-                video=BufferedInputFile(video_bytes, filename="earth_zoom_in.mp4"),
+                video=video_arg,
                 caption=VIDEO_CAPTION,
                 parse_mode=ParseMode.HTML,
                 supports_streaming=True,
-                request_timeout=300,  # 5 min — enough for ~30 MB on 1 Mbps
+                request_timeout=300,  # 5 min — enough for ~30 MB on slow uplinks
             ),
         )
         if delivered:
@@ -350,22 +385,65 @@ async def _send_video_with_retries(
 async def _deliver_video(
     message: Message, status_message: Message, video_url: str,
 ) -> None:
-    logger.info("Downloading generated video from %s...", video_url[:80])
+    logger.info("Preparing generated video from %s...", video_url[:80])
     await _safe_edit(status_message, DOWNLOADING_TEXT)
 
+    local_path: str | None = None
     video_bytes: bytes | None = None
+
     try:
-        video_bytes = await _download_video_bytes(video_url)
-        logger.info("Downloaded %s bytes", len(video_bytes))
-        reversed_bytes = _reverse_video_bytes(video_bytes)
-        if reversed_bytes:
-            video_bytes = reversed_bytes
-            logger.info("Video reversed for Earth -> subject trajectory")
+        local_path = _reverse_cdn_to_tempfile_ffmpeg(video_url)
+        if local_path:
+            sz = os.path.getsize(local_path)
+            logger.info(
+                "Video reversed via ffmpeg CDN pipe (%s MB)",
+                round(sz / 1024 / 1024, 2),
+            )
+        else:
+            video_bytes = await _download_video_bytes(video_url)
+            logger.info("Downloaded %s bytes", len(video_bytes))
+            reversed_bytes = _reverse_video_bytes(video_bytes)
+            if reversed_bytes:
+                video_bytes = reversed_bytes
+                logger.info("Video reversed for Earth -> subject trajectory")
+            fd, tmp_path = tempfile.mkstemp(suffix=".mp4", prefix="earth_rev_")
+            os.close(fd)
+            try:
+                with open(tmp_path, "wb") as f:
+                    f.write(video_bytes)
+                local_path = tmp_path
+                video_bytes = None
+            except Exception:
+                try:
+                    os.remove(tmp_path)
+                except OSError:
+                    pass
+                raise
     except Exception as exc:  # noqa: BLE001
-        logger.warning("Download failed, will try URL send: %s", exc)
+        logger.warning("Prepare video failed, will try CDN URL send only: %s", exc)
+        local_path = None
+        video_bytes = None
 
     await _safe_edit(status_message, SENDING_VIDEO_TEXT)
-    delivered = await _send_video_with_retries(message, video_bytes, video_url)
+    heartbeat = asyncio.create_task(_heartbeat_upload_progress(status_message))
+    try:
+        delivered = await _send_video_with_retries(
+            message,
+            video_url,
+            local_path=local_path,
+            video_bytes=video_bytes,
+        )
+    finally:
+        heartbeat.cancel()
+        try:
+            await heartbeat
+        except asyncio.CancelledError:
+            pass
+        if local_path and os.path.isfile(local_path):
+            try:
+                os.remove(local_path)
+            except OSError:
+                pass
     if not delivered:
         # Don't throw — network may be flapping; user will retry.
         await _safe_edit(status_message, TIMEOUT_TEXT)
@@ -458,6 +536,77 @@ def _prepare_image_portrait(raw_bytes: bytes) -> tuple[bytes, str]:
     return buf.getvalue(), "image/jpeg"
 
 
+def _reverse_cdn_to_tempfile_ffmpeg(video_url: str) -> str | None:
+    """Reverse MP4 by piping the Higgsfield CDN URL through ffmpeg.
+
+    Avoids ``aiohttp`` reading the entire file into Python first, which cuts
+    RAM and usually speeds up the handoff to Telegram (smaller ffmpeg output
+    with ``ultrafast`` + ``+faststart`` for quicker in-app playback).
+    """
+    ffmpeg_bin = _ffmpeg_exe()
+    if not ffmpeg_bin:
+        return None
+    out_path: str | None = None
+    try:
+        fd, out_path = tempfile.mkstemp(suffix=".mp4", prefix="earth_rev_")
+        os.close(fd)
+        cmd = [
+            ffmpeg_bin,
+            "-y",
+            "-hide_banner",
+            "-loglevel",
+            "error",
+            "-i",
+            video_url,
+            "-vf",
+            "reverse",
+            "-an",
+            "-c:v",
+            "libx264",
+            "-preset",
+            "ultrafast",
+            "-crf",
+            "26",
+            "-pix_fmt",
+            "yuv420p",
+            "-movflags",
+            "+faststart",
+            out_path,
+        ]
+        proc = subprocess.run(
+            cmd,
+            capture_output=True,
+            text=True,
+            timeout=420,
+            check=False,
+        )
+        if proc.returncode != 0:
+            logger.warning(
+                "ffmpeg CDN reverse failed (fallback to download): %s",
+                (proc.stderr or "")[-500:],
+            )
+            try:
+                os.remove(out_path)
+            except OSError:
+                pass
+            return None
+        if os.path.getsize(out_path) < 512:
+            try:
+                os.remove(out_path)
+            except OSError:
+                pass
+            return None
+        return out_path
+    except Exception as exc:  # noqa: BLE001
+        logger.warning("ffmpeg CDN reverse exception: %s", exc)
+        if out_path and os.path.isfile(out_path):
+            try:
+                os.remove(out_path)
+            except OSError:
+                pass
+        return None
+
+
 async def _download_video_bytes(url: str, total_timeout_seconds: int = 240) -> bytes:
     timeout = aiohttp.ClientTimeout(total=total_timeout_seconds)
     async with aiohttp.ClientSession(timeout=timeout) as session:
@@ -488,7 +637,7 @@ def _reverse_video_bytes(video_bytes: bytes) -> bytes | None:
         with tempfile.NamedTemporaryFile(delete=False, suffix=".mp4") as out_file:
             out_path = out_file.name
 
-        ffmpeg_bin = shutil.which("ffmpeg")
+        ffmpeg_bin = _ffmpeg_exe()
         if ffmpeg_bin:
             cmd = [
                 ffmpeg_bin,
@@ -501,11 +650,13 @@ def _reverse_video_bytes(video_bytes: bytes) -> bytes | None:
                 "-c:v",
                 "libx264",
                 "-preset",
-                "veryfast",
+                "ultrafast",
                 "-crf",
-                "24",
+                "26",
                 "-pix_fmt",
                 "yuv420p",
+                "-movflags",
+                "+faststart",
                 out_path,
             ]
             proc = subprocess.run(
@@ -520,7 +671,9 @@ def _reverse_video_bytes(video_bytes: bytes) -> bytes | None:
                 logger.warning("ffmpeg reverse failed: %s", proc.stderr[-500:])
                 return _reverse_with_imageio(in_path, out_path)
         else:
-            logger.warning("ffmpeg not found in PATH; using imageio reverse fallback")
+            logger.warning(
+                "ffmpeg unavailable (PATH + imageio_ffmpeg); using imageio reverse fallback",
+            )
             return _reverse_with_imageio(in_path, out_path)
         with open(out_path, "rb") as f:
             return f.read()
@@ -554,6 +707,26 @@ def _reverse_with_imageio(in_path: str, out_path: str) -> bytes | None:
         return None
 
 
+async def _heartbeat_upload_progress(status_message: Message) -> None:
+    """While Telegram uploads a large MP4 (slow via VPN proxy), reassure the user."""
+    elapsed = 0
+    extra = (
+        "\n\n<i>Прошло {sec} сек. Большой файл — загрузка в Telegram через прокси/VPN "
+        "может занять несколько минут.</i>"
+    )
+    try:
+        while True:
+            await asyncio.sleep(35)
+            elapsed += 35
+            await _safe_edit(
+                status_message,
+                SENDING_VIDEO_TEXT + extra.format(sec=elapsed),
+                parse_mode=ParseMode.HTML,
+            )
+    except asyncio.CancelledError:
+        raise
+
+
 async def _retry_telegram_network_call(
     *,
     label: str,
@@ -568,7 +741,11 @@ async def _retry_telegram_network_call(
             if attempt > 1:
                 logger.info("%s succeeded on attempt %s/%s", label, attempt, attempts)
             return True
-        except TelegramNetworkError as exc:
+        except (
+            TelegramNetworkError,
+            TimeoutError,
+            OSError,
+        ) as exc:
             logger.warning("%s failed on attempt %s/%s: %s", label, attempt, attempts, exc)
             if attempt < attempts:
                 await asyncio.sleep(pause_seconds)
@@ -585,14 +762,68 @@ async def _safe_edit(status_message: Message, text: str, **kwargs: Any) -> None:
 
 # --- Entry point -------------------------------------------------------------
 
+async def _wait_until_telegram_ok(bot: Bot) -> None:
+    """Block until Bot API is reachable (get_me). Retries forever with backoff.
+
+    Without this, `start_polling` crashes on first get_me() when
+    `api.telegram.org` is blocked (e.g. RU) — the process exits and the bot
+    "does not react". User can turn on VPN / set TELEGRAM_PROXY and wait.
+    Catches proxy refused / aiohttp errors too (not only TelegramNetworkError).
+    """
+    attempt = 0
+    while True:
+        try:
+            me = await bot.get_me()
+            logger.info("Telegram API reachable: @%s (id=%s)", me.username, me.id)
+            return
+        except TelegramUnauthorizedError:
+            raise
+        except TelegramNetworkError as exc:
+            attempt += 1
+            wait_s = min(30, 5 * min(attempt, 6))
+            logger.error(
+                "No route to api.telegram.org (try %s). Set TELEGRAM_PROXY or "
+                "system HTTPS_PROXY (SOCKS/HTTP, not MTProto in the TG app). "
+                "VPS or full-tunnel VPN. Retrying in %s s. %s",
+                attempt,
+                wait_s,
+                exc,
+            )
+            await asyncio.sleep(float(wait_s))
+        except Exception as exc:  # noqa: BLE001
+            attempt += 1
+            wait_s = min(30, 5 * min(attempt, 6))
+            hint = (
+                " If TELEGRAM_PROXY: start the VPN app, check the port is LISTENING on 127.0.0.1, "
+                "or remove TELEGRAM_PROXY and use VPN TUN so Python goes through the tunnel."
+            )
+            logger.error(
+                "get_me failed (try %s).%s Retrying in %s s. %s",
+                attempt,
+                hint,
+                wait_s,
+                exc,
+            )
+            await asyncio.sleep(float(wait_s))
+
+
 async def main() -> None:
     settings = load_settings()
     # Generous timeout so sending 20+ MB videos over slow links doesn't die.
     # aiogram default is 60 s — our videos sometimes need 3–5 minutes to upload.
     telegram_session_timeout = 600.0
-    if settings.telegram_proxy:
+
+    proxy_url = settings.telegram_proxy
+    proxy_src = settings.telegram_proxy_source
+    if not proxy_url:
+        discovered = await discover_local_telegram_proxy(settings.telegram_bot_token)
+        if discovered:
+            proxy_url = discovered
+            proxy_src = "auto_local_probe"
+
+    if proxy_url:
         session = AiohttpSession(
-            proxy=settings.telegram_proxy, timeout=telegram_session_timeout,
+            proxy=proxy_url, timeout=telegram_session_timeout,
         )
     else:
         session = AiohttpSession(timeout=telegram_session_timeout)
@@ -600,8 +831,15 @@ async def main() -> None:
     dp = Dispatcher(storage=MemoryStorage())
     dp.include_router(router)
 
-    if settings.telegram_proxy:
-        logger.info("Using TELEGRAM_PROXY for Bot API")
+    if proxy_url:
+        src = proxy_src or "TELEGRAM_PROXY"
+        logger.info("Bot API using proxy (from %s)", src)
+    else:
+        logger.info(
+            "Bot API: no proxy in env (TELEGRAM_PROXY / HTTPS_PROXY / …) — direct HTTPS",
+        )
+
+    await _wait_until_telegram_ok(bot)
 
     # Warm up Earth cache so the first user doesn't pay the Soul queue penalty.
     hf_api = HiggsfieldAPI(

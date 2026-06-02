@@ -1,6 +1,8 @@
 aiogram==3.20.0.post0
 aiohttp==3.11.18
 aiohttp-socks==0.10.1
+imageio[ffmpeg]>=2.31,<3
+imageio-ffmpeg>=0.4.9
 pillow>=10.0,<12.0
 python-dotenv==1.1.0
 pytest==8.3.5
