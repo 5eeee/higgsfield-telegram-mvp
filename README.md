@@ -1,6 +1,8 @@
 # Earth Zoom In Telegram Bot
 
-MVP Telegram-бот, повторяющий **Higgsfield Earth Zoom In** 1-в-1 через
+> **Полная техническая документация:** [docs/TECHNICAL.md](docs/TECHNICAL.md) · **GitHub:** [github.com/5eeee/higgsfield-telegram-mvp](https://github.com/5eeee/higgsfield-telegram-mvp)
+
+MVP Telegram-бот
 официальный API. Один сценарий — один UX. Кинематографическое приближение
 из космоса через атмосферу и город прямо к лицу пользователя.
 

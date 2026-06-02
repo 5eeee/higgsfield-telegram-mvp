@@ -14,3 +14,6 @@ assets/logo-preview-*.png
 docs/*CREDENTIALS*.md
 node_modules/
 .next/
+
+.cursor/
+.cursor
